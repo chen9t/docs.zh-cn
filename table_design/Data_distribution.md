@@ -143,7 +143,9 @@ DISTRIBUTED BY HASH(site_id,city_code) BUCKETS 10;
 在 StarRocks 中，分桶是实际物理文件组织的单元，包含一个 Tablet。自 2.4 版本开始支持并行扫描 Tablet ，能够简化分桶数量设定。具体设定方式：首先预估每个分区的数据量，然后按照 10 GB 原始文件一个 Tablet，从而计算分桶数量。
 
 > 注意：
+>
 > - 您需要执行`SET GLOBAL enable_tablet_internal_parallel;`，开启并行扫描 Tablet。
+>
 > - 不支持修改已创建的分区的分桶数量，支持在增加分区时为新增分区设置新的分桶数量。
 
 ### 管理分区
