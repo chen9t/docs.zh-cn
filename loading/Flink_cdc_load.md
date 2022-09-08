@@ -40,7 +40,7 @@ StarRocks 提供 Flink CDC connector、flink-connector-starrocks 和 StarRocks-m
 
    > 注意：
    > 如果 Flink 已经处于运行状态中，则需要重启 Flink ，加载并生效 jar 包。
-   > 
+   >
    > ``` bash
    > $ ./bin/stop-cluster.sh
    > $ ./bin/start-cluster.sh
