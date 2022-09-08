@@ -40,11 +40,12 @@ StarRocks 提供 Flink CDC connector、flink-connector-starrocks 和 StarRocks-m
 
    > 注意：
    > 如果 Flink 已经处于运行状态中，则需要重启 Flink ，加载并生效 jar 包。
+
    > ``` bash
    > $ ./bin/stop-cluster.sh
    > $ ./bin/start-cluster.sh
    > ```
-   
+
 6. 下载并解压 [smt.tar.gz](https://www.starrocks.com/zh-CN/download/community)
 7. 解压并修改配置文件
     * `Db` 需要修改成 MySQL 的连接信息。  
