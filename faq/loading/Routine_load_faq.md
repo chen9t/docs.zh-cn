@@ -28,7 +28,7 @@ min(alive_be_number, partition_number, desired_concurrent_number, max_routine_lo
 
 因此当消费分区和 BE 节点数量较多，并且大于其余两个参数时，如果您需要增加实际任务并行度，则可以提高如下参数。
 
-假设消费分区数量为 `7`，存活 BE 数量为 `5`，`max_routine_load_task_concurrent_num` 为默认值 `5`。此时如果需要增加实际任务并发度至上限，则需要将  `desired_concurrent_number` 设置为 `5`（默认值为 `3`），则计算实际任务并行度 `min(5,7,5,5)` 为 `5`。
+假设消费分区数量为 `7`，存活 BE 数量为 `5`，`max_routine_load_task_concurrent_num` 为默认值 `5`。此时如果需要增加实际任务并发度至上限，则需要将 `desired_concurrent_number` 设置为 `5`（默认值为 `3`），则计算实际任务并行度 `min(5,7,5,5)` 为 `5`。
 
 更多参数说明，请参见 [CREATE ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/ROUTINE%20LOAD.md#example)。
 
@@ -70,7 +70,7 @@ I0325 20:27:50.410579 15259 data_consumer_group.cpp:131] consumer group done: 41
   - 如果是数据源的数据格式问题，则需要检查数据源数据格式，并进行修复。修复后您可以使用 [RESUME ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/RESUME%20ROUTINE%20LOAD.md)，恢复 **PAUSED** 状态的导入作业。
 
   - 如果是数据源的数据格式无法被 StarRocks 解析，则需要调整错误行数阈值`max_error_number`。
-  您可以先执行 [SHOW ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/SHOW%20ROUTINE%20LOAD.md)，查看错误行数阈值 `max_error_number`，然后执行  [ALTER ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/alter-routine-load.md)，适当提高错误行数阈值 `max_error_number`。修改阈值后您可以使用  [RESUME ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/RESUME%20ROUTINE%20LOAD.md)，恢复 **PAUSED** 状态的导入作业。
+  您可以先执行 [SHOW ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/SHOW%20ROUTINE%20LOAD.md)，查看错误行数阈值 `max_error_number`，然后执行  [ALTER ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/alter-routine-load.md)，适当提高错误行数阈值 `max_error_number`。修改阈值后您可以使用 [RESUME ROUTINE LOAD](../../sql-reference/sql-statements/data-manipulation/RESUME%20ROUTINE%20LOAD.md)，恢复 **PAUSED** 状态的导入作业。
 
 - **报错提示**：如果导入作业变成为 **CANCELLED** 状态。
 
